@@ -1,4 +1,4 @@
-# Tour of Heroes .NET API
+# Tour of React basic API
 
 This API is a React implementation for the fronted of the, which when finished generates the API in memory.
 
