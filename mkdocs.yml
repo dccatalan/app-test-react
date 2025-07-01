@@ -1,0 +1,14 @@
+site_name: Basic React App
+site_description: Basic is a sample application for testing.
+site_author: hc-desa
+site_url: https://react-basic.es
+repo_url: https://github.com/hc-desa/app-test-react
+edit_uri: edit/main/docs
+
+plugins: 
+  - techdocs-core
+
+nav:
+  - Home: index.md
+  - Management: managing-basic.md
+    
