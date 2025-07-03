@@ -69,8 +69,8 @@ spec:
       action: fetch:template
       input:
         url: ./
-        copyWithoutTemplating:
-          - .github/workflows/*    
+        # copyWithoutTemplating:
+          # - .github/workflows/*    
         values:
           name: ${{ parameters.name }}
           owner: ${{ parameters.owner }}
@@ -78,16 +78,16 @@ spec:
           destination: ${{ parameters.repoUrl | parseRepoUrl }}
           repoUrl: ${{ parameters.repoUrl }}
           system: ${{ parameters.system }}
-    - id: acme:file:create
-      name: Create a README file
-      action: acme:file:create
-      input:
-        filename: README.md
-        contents: |
-          # ${{ parameters.name }}          
-          ${{ parameters.description }}
+    # - id: acme:file:create
+    #   name: Create a README file
+    #   action: acme:file:create
+    #   input:
+    #     filename: README.md
+    #     contents: |
+    #       # ${{ parameters.name }}          
+    #       ${{ parameters.description }}
           
-          This is a new React project created with 💚 using Backstage.
+    #       This is a new React project created with 💚 using Backstage.
     - id: publish
       name: Publish
       action: publish:github
@@ -97,26 +97,26 @@ spec:
         repoUrl: ${{ parameters.repoUrl }}
         # repoVisibility: private
         gitCommitMessage: Create scaffold
-        topics: ["backstage-include", "returngis"]
+        # topics: ["backstage-include", "returngis"]
         defaultBranch: main
-        secrets: { MY_SECRET: This is a secret }
-        variables: { MY_VARIABLE: This is a variable }
-    - id: github:ghas:configure
-      name: Configure GitHub Advanced Security
-      action: github:ghas:configure
-      input:
-        repoUrl: ${{ parameters.repoUrl }}
-        code_scanning: enabled
-        secret_scanning: enabled
-        push_secret_protection: enabled
-        dependabot: enabled
-    - id: github-action
-      name: Stating GitHub action
-      action: github:actions:dispatch
-      input:
-        workflowId: ci.yml # ID of GitHub action WorkFlow
-        repoUrl: ${{ parameters.repoUrl }}
-        branchOrTagName: "main"
+        # secrets: { MY_SECRET: This is a secret }
+        # variables: { MY_VARIABLE: This is a variable }
+    # - id: github:ghas:configure
+    #   name: Configure GitHub Advanced Security
+    #   action: github:ghas:configure
+    #   input:
+    #     repoUrl: ${{ parameters.repoUrl }}
+    #     code_scanning: enabled
+    #     secret_scanning: enabled
+    #     push_secret_protection: enabled
+    #     dependabot: enabled
+    # - id: github-action
+    #   name: Stating GitHub action
+    #   action: github:actions:dispatch
+    #   input:
+    #     workflowId: ci.yml # ID of GitHub action WorkFlow
+    #     repoUrl: ${{ parameters.repoUrl }}
+    #     branchOrTagName: "main"
     - id: register
       name: Register
       action: catalog:register
