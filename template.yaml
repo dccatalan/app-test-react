@@ -2,8 +2,8 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 # some metadata about the template itself
 metadata:
-  name: node-basic-template
-  title: Node Basic Template
+  name: react-basic-template
+  title: React Basic Template
   description: Of the basic app React
   tags:
     - node
@@ -21,31 +21,31 @@ spec:
       required:
         - name
         - description
-        - system
+        # - system
       properties:
         name:
           type: string
           title: Project Name
           description: The name of the project
           ui:autofocus: true          
-          ui:field: ValidateKebabCase # Custom field extension
+          # ui:field: ValidateKebabCase # Custom field extension
         description:
           title: Description
           type: string
           description: A description for the component
-        owner:
-          title: Select in which group the component will be created
-          type: string
-          description: The group the component belongs to
-          ui:field: MyGroupsPicker          
-        system:
-          title: System
-          type: string
-          description: The system the component belongs to
-          ui:field: EntityPicker
-          ui:options:
-            catalogFilter:
-              kind: System
+        # owner:
+        #   title: Select in which group the component will be created
+        #   type: string
+        #   description: The group the component belongs to
+        #   ui:field: MyGroupsPicker          
+        # system:
+        #   title: System
+        #   type: string
+        #   description: The system the component belongs to
+        #   ui:field: EntityPicker
+        #   ui:options:
+        #     catalogFilter:
+        #       kind: System
     - title: Choose a destination
       required:
         - repoUrl
