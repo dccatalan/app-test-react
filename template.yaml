@@ -4,7 +4,7 @@ kind: Template
 metadata:
   name: node-basic-template
   title: Node Basic Template
-  description: Scaffold a new Node project
+  description: Of the basic app React
   tags:
     - node
     - react
@@ -58,7 +58,6 @@ spec:
           ui:options:            
             allowedOwners:
               - hc-desa
-              - returngis
             allowedHosts:
               - github.com
   # here's the steps that are executed in series in the scaffolder backend
@@ -68,9 +67,9 @@ spec:
       name: Fetch Template
       action: fetch:template
       input:
-        url: ./
-        # copyWithoutTemplating:
-          # - .github/workflows/*    
+        url: ./react
+        copyWithoutTemplating:
+          - .github/workflows/*    
         values:
           name: ${{ parameters.name }}
           owner: ${{ parameters.owner }}
@@ -87,7 +86,6 @@ spec:
     #       # ${{ parameters.name }}          
     #       ${{ parameters.description }}
           
-    #       This is a new React project created with 💚 using Backstage.
     - id: publish
       name: Publish
       action: publish:github
@@ -96,7 +94,7 @@ spec:
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
         # repoVisibility: private
-        gitCommitMessage: Create scaffold
+        gitCommitMessage: Create App Backstage Template
         # topics: ["backstage-include", "returngis"]
         defaultBranch: main
         # secrets: { MY_SECRET: This is a secret }
@@ -110,13 +108,13 @@ spec:
     #     secret_scanning: enabled
     #     push_secret_protection: enabled
     #     dependabot: enabled
-    # - id: github-action
-    #   name: Stating GitHub action
-    #   action: github:actions:dispatch
-    #   input:
-    #     workflowId: ci.yml # ID of GitHub action WorkFlow
-    #     repoUrl: ${{ parameters.repoUrl }}
-    #     branchOrTagName: "main"
+    - id: github-action
+      name: Stating GitHub action
+      action: github:actions:dispatch
+      input:
+        workflowId: ci.yml # ID of GitHub action WorkFlow
+        repoUrl: ${{ parameters.repoUrl }}
+        branchOrTagName: "main"
     - id: register
       name: Register
       action: catalog:register
