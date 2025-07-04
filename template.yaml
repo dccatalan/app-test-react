@@ -20,8 +20,8 @@ spec:
       # ui:ObjectFieldTemplate: TwoColumn
       required:
         - name
-        # - description
-        # - system
+        - description
+        - system
       properties:
         name:
           type: string
@@ -31,25 +31,25 @@ spec:
           ui:options:
             rows: 2         
           # ui:field: ValidateKebabCase # Custom field extension
-        # description:
-        #   title: Description
-        #   type: string
-        #   description: A description for the component
-        #   ui:options:
-        #     rows: 5
-        # owner:
-        #   title: Select in which group the component will be created
-        #   type: string
-        #   description: The group the component belongs to
-        #   ui:field: MyGroupsPicker          
-        # system:
-        #   title: System
-        #   type: string
-        #   description: The system the component belongs to
-        #   ui:field: EntityPicker
-        #   ui:options:
-        #     catalogFilter:
-        #       kind: System
+        description:
+          title: Description
+          type: string
+          description: A description for the component
+          ui:options:
+            rows: 5
+        owner:
+          title: Select in which group the component will be created
+          type: string
+          description: The group the component belongs to
+          ui:field: MyGroupsPicker          
+        system:
+          title: System
+          type: string
+          description: The system the component belongs to
+          ui:field: EntityPicker
+          ui:options:
+            catalogFilter:
+              kind: System
     - title: Choose a destination
       required:
         - repoUrl
@@ -76,11 +76,11 @@ spec:
         #   - .github/workflows/*    
         values:
           name: ${{ parameters.name }}
-          # owner: ${{ parameters.owner }}
-          # description: ${{ parameters.description }}
+          owner: ${{ parameters.owner }}
+          description: ${{ parameters.description }}
           destination: ${{ parameters.repoUrl | parseRepoUrl }}
           repoUrl: ${{ parameters.repoUrl }}
-          # system: ${{ parameters.system }}
+          system: ${{ parameters.system }}
     # - id: acme:file:create
     #   name: Create a README file
     #   action: acme:file:create
