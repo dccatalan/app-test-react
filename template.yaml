@@ -72,11 +72,11 @@ spec:
         #   - .github/workflows/*    
         values:
           name: ${{ parameters.name }}
-          owner: ${{ parameters.owner }}
+          # owner: ${{ parameters.owner }}
           description: ${{ parameters.description }}
           destination: ${{ parameters.repoUrl | parseRepoUrl }}
           repoUrl: ${{ parameters.repoUrl }}
-          system: ${{ parameters.system }}
+          # system: ${{ parameters.system }}
     # - id: acme:file:create
     #   name: Create a README file
     #   action: acme:file:create
