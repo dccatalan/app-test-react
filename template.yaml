@@ -41,7 +41,7 @@ spec:
           title: Select in which group the component will be created
           type: string
           description: The group the component belongs to
-          ui:field: MyGroupsPicker          
+          ui:field: MyGroupsPicker         
         system:
           title: System
           type: string

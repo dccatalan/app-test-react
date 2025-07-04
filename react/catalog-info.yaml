@@ -2,14 +2,14 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: ${{ values.name | dump }}
-  description: Template App React
+  description: ${{ values.description | dump }}
   tags:
-    - dotnet
-    - csharp
+    - node
+    - react
     - webapi
-  
+    - recommended  
   links:
-    - url: https://github.com/hc-desa/app-test-react
+    - url: https://github.com/${{values.destination.owner + "/" + values.destination.repo}}
       title: Repository
       icon: github
 
@@ -20,5 +20,5 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: hc-desa
-  system: linux
+  owner: ${{ values.owner | dump }}
+  system: ${{ values.system }}
