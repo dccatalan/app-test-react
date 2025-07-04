@@ -17,10 +17,10 @@ spec:
   # https://backstage.io/docs/features/software-templates/input-examples
   parameters:
     - title: Complete the form to create a new react project
-      ui:ObjectFieldTemplate: TwoColumn
+      # ui:ObjectFieldTemplate: TwoColumn
       required:
         - name
-        - description
+        # - description
         # - system
       properties:
         name:
@@ -31,12 +31,12 @@ spec:
           ui:options:
             rows: 2         
           # ui:field: ValidateKebabCase # Custom field extension
-        description:
-          title: Description
-          type: string
-          description: A description for the component
-          ui:options:
-            rows: 5
+        # description:
+        #   title: Description
+        #   type: string
+        #   description: A description for the component
+        #   ui:options:
+        #     rows: 5
         # owner:
         #   title: Select in which group the component will be created
         #   type: string
@@ -77,7 +77,7 @@ spec:
         values:
           name: ${{ parameters.name }}
           # owner: ${{ parameters.owner }}
-          description: ${{ parameters.description }}
+          # description: ${{ parameters.description }}
           destination: ${{ parameters.repoUrl | parseRepoUrl }}
           repoUrl: ${{ parameters.repoUrl }}
           # system: ${{ parameters.system }}
