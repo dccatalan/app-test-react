@@ -2,6 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: ${{ values.name | dump }}
+  namespace: testing-services
   description: ${{ values.description | dump }}
   tags:
     - node
@@ -22,8 +23,18 @@ spec:
   lifecycle: experimental
   owner: ${{ values.owner | dump }}
   system: ${{ values.system }}
-  dependsOn: ['resource:heroes-db']
-  apiConsumedBy: ['component:www-heroes']
+  dependsOn: 
+    - resource:basic-react
+  apiConsumedBy: 
+    - component:examples
+    - example-grpc-api
+    - name: test
+  providesApis:
+    - basic-api
+    - petstore
+    - internal/streetlights
+    - hello-world
+    - name: test
   definition: |
     openapi: 3.0.1
     info:
