@@ -24,9 +24,9 @@ spec:
   owner: ${{ values.owner | dump }}
   system: ${{ values.system }}
   dependsOn: 
-    - resource:basic-react
+    - resource:default/basic-react
   apiConsumedBy: 
-    - example-grpc-api
+    - component:testing-services/testBackstage
   providesApis:
     - example-grpc-api
   definition: |
