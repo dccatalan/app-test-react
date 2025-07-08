@@ -24,10 +24,11 @@ spec:
   owner: ${{ values.owner | dump }}
   system: ${{ values.system }}
   dependsOn: 
-    - resource:default/basic-react
+    - resource:basic-react
   apiConsumedBy: 
     - component:testing-services/testBackstage
   providesApis:
+    - default/example-grpc-api
     - example-grpc-api
   definition: |
     openapi: 3.0.1
