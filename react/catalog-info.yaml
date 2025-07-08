@@ -26,13 +26,8 @@ spec:
   dependsOn: 
     - resource:basic-react
   apiConsumedBy: 
-    - component:examples
     - example-grpc-api
   providesApis:
-    - basic-api
-    - petstore
-    - internal/streetlights
-    - hello-world
     - example-grpc-api
   definition: |
     openapi: 3.0.1
