@@ -25,7 +25,6 @@ spec:
   system: ${{ values.system }}
   dependsOn: 
     - resource:basic-react
-    - example-grpc-api
   apiConsumedBy: 
     - component:examples
     - example-grpc-api
