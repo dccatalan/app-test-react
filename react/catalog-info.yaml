@@ -25,6 +25,7 @@ spec:
   system: ${{ values.system }}
   dependsOn: 
     - resource:basic-react
+    - example-grpc-api
   apiConsumedBy: 
     - component:examples
     - example-grpc-api
@@ -33,6 +34,7 @@ spec:
     - petstore
     - internal/streetlights
     - hello-world
+    - example-grpc-api
   definition: |
     openapi: 3.0.1
     info:
