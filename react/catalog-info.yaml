@@ -28,13 +28,11 @@ spec:
   apiConsumedBy: 
     - component:examples
     - example-grpc-api
-    - name: test
   providesApis:
     - basic-api
     - petstore
     - internal/streetlights
     - hello-world
-    - name: test
   definition: |
     openapi: 3.0.1
     info:
