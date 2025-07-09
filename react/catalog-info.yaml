@@ -29,7 +29,6 @@ spec:
     - component:testing-services/testBackstage
   providesApis:
     - default/example-grpc-api
-    - example-grpc-api
   definition: |
     openapi: 3.0.1
     info:
