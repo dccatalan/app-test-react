@@ -11,7 +11,7 @@ metadata:
     - webapi
     - recommended
 spec:
-  owner: user:hc-desa
+  owner: user:dccatalan
   type: service
   # these are the steps which are rendered in the frontend with the form input
   # https://backstage.io/docs/features/software-templates/input-examples
@@ -61,7 +61,7 @@ spec:
           ui:field: RepoUrlPicker          
           ui:options:            
             allowedOwners:
-              - hc-desa
+              - dccatalan
             allowedHosts:
               - github.com
   # here's the steps that are executed in series in the scaffolder backend
